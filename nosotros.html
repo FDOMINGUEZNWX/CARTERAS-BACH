@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet">
+    <title>Nosotros | Carteras Bach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<a href="#" class="whatsapp-boton" title="Chat de WhatsApp">
+	<i class="fa fa-whatsapp"></i>
+</a>
+	
+<body>
+    <header>
+        <div class="header-contenedor">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
+                </a>
+            </div>
+            <!-- Ícono del menú (visible en menos de 600px) -->
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <!-- Menú de navegación -->
+            <nav class="navegacion" id="navegacion">
+                <a href="carteras.html">Colección</a>
+                <a href="#">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+	
+	<section class="banner">
+        <div class="banner-content">
+            <h1>Nosotros </h1>
+            <p>¿Quiénes somos?</p>
+        </div>
+		<picture class="banner-img">
+			<source	media="(max-width: 600px)" srcset="images/placeholder-cajacel.png">
+			<img src="images/banner-placeholder.png">
+		</picture>
+    </section>
+
+	<main class="nosotros-pagina">
+		<section class="nosotros-layout">
+			<div class="nosotros-imagen">
+				<img src="images/cartera-1-nos.png" alt="Cartera Bach">
+			</div>
+
+			<div class="nosotros-texto">
+				<div class="bloque">
+					<h2>Pasión por la exclusividad</h2>
+					<p>Desde que se creó Carteras Bach, nuestro principal propósito fue ofrecer carteras y mochilas que tengan un diseño exclusivo y único, con el fin de que cada Cartera Bach tenga su propia identidad.</p>
+				</div>
+
+				<div class="bloque">
+					<h2>Compromiso con la calidad</h2>
+					<p>Nuestra selección de materiales y estampados son de la más alta calidad, así, nos aseguramos de brindar el mayor nivel de atención y detalle posible.</p>
+				</div>
+			</div>
+		</section>
+		<section class="timeline-v2">
+			<h2>Nuestra Historia</h2>
+			<div class="timeline-v2-container">
+				<div class="evento">
+					<div class="año">2012</div>
+						<div class="contenido">
+							<h3>Fundación</h3>
+							<p>Nacimos con la misión de crear carteras que reflejen autenticidad y elegancia, desde nuestro espacio en Facebook.</p>
+						</div>
+				</div>
+			<div class="evento">
+				<div class="año">2015</div>
+					<div class="contenido">
+						<h3>Crecimiento</h3>
+						<p>Expandimos nuestro alcance, ofreciendo entregas a domicilio.</p>
+					</div>
+			</div>
+			<div class="evento">
+				<div class="año">2020</div>
+					<div class="contenido">
+						<h3>Expansión digital</h3>
+						<p>Nos expandimos a Instagram para catapultar aún más nuestro emprendimiento.</p>
+					</div>
+			</div>
+			<div class="evento">
+				<div class="año">2025</div>
+					<div class="contenido">
+						<h3>Segunda expansión digital</h3>
+						<p>Creamos nuestra página web, con el fin de que podamos brindar una mejor experiencia de compra.</p>
+					</div>
+			</div>
+			</div>
+		</section>
+	</main>
+	
+    <footer>
+        <p>&copy; Carteras Bach</p>
+    </footer>
+    <!-- Este script funciona como interruptor de toggle. -->
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("navegacion");
+            if (x.classList.contains("mostrar")) {
+                x.classList.remove("mostrar");
+            } else {
+                x.classList.add("mostrar");
+            }
+        }
+    </script>
+</body>
+</html>

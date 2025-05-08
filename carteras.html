@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet">
+    <title>Carteras y Mochilas | Carteras Bach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<a href="#" class="whatsapp-boton" title="Chat de WhatsApp">
+	<i class="fa fa-whatsapp"></i>
+</a>	
+
+<body>
+	<header>
+		<div class="header-contenedor">
+			<div class="logo">
+				<a href="index.html">
+					<img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
+				</a>
+			</div>
+			
+			<!-- Ícono del menú (visible en menos de 600px) -->
+			<a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+				<i class="fa fa-bars"></i>
+			</a>
+			
+			<!-- Menú de navegación -->
+			<nav class="navegacion" id="navegacion">
+				<a href="#">Colección</a>
+				<a href="nosotros.html">Nosotros</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
+		</div>
+	</header>
+	
+	<section class="banner">
+    	<div class="banner-content">
+        	<h1>Carteras </h1>
+            <p>Nuestra selección de carteras.</p>
+        </div>
+		<picture class="banner-img">
+			<source	media="(max-width: 600px)" srcset="images/placeholder-cajacel.png">
+			<img src="images/banner-placeholder.png">
+		</picture>
+    </section>
+	
+	<section class="productos">
+        <h2>Carteras de la semana</h2>
+        <div class="productos-grilla">
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Cartera 1">
+                <div class="info">
+                    <h3>Modelo 1</h3>
+                    <p>$30.000 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Cartera 2">
+                <div class="info">
+                    <h3>Modelo 2</h3>
+                    <p>$30.500 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Cartera 3">
+                <div class="info">
+                    <h3>Modelo 3</h3>
+                    <p>$31.200 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Cartera 4">
+                <div class="info">
+                    <h3>Modelo 4</h3>
+                    <p>$33.000 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+    	</div>
+    </section>
+	
+	<section class="productos">
+        <h2>Mochilas de la semana</h2>
+        <div class="productos-grilla">
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Mochila 1">
+                <div class="info">
+                    <h3>Modelo 1</h3>
+                    <p>$35.000 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Mochila 2">
+                <div class="info">
+                    <h3>Modelo 2</h3>
+                    <p>$35.500 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Mochila 3">
+                <div class="info">
+                    <h3>Modelo 3</h3>
+                    <p>$36.200 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="images/placeholder-caja.png" alt="Mochila 4">
+                <div class="info">
+                    <h3>Modelo 4</h3>
+                    <p>$38.000 | 3 cuotas sin interés</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+    	</div>
+    </section>
+
+<footer>
+    <p>&copy; Carteras Bach</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    var x = document.getElementById("navegacion");
+    x.classList.toggle("mostrar");
+}
+</script>
+
+</body>
+</html>
