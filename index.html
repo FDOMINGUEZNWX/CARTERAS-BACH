@@ -39,15 +39,30 @@
     </header>
 
     <section class="banner">
-        <div class="banner-content">
+		<div class="slider-container">
+			<div class="slider">
+				<div class="slide">
+					<picture>
+						<source	media="(max-width: 600px)" srcset="images/placeholder-cajacel.png">
+						<img src="images/banner-placeholder.png" alt="banner1">
+					</picture>
+				</div>
+				<div class="slide">
+					<picture>
+						<source	media="(max-width: 600px)" srcset="images/placeholder-cajacel.png">
+						<img src="images/banner-placeholder.png" alt="banner2">
+					</picture>
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner-overlay"></div>
+        
+		<div class="banner-content">
             <h1>Elegí tu diseño exclusivo</h1>
             <p>Siempre hay una Cartera Bach para vos</p>
             <a href="carteras.html">Ver Colecciones</a>
         </div>
-		<picture class="banner-img">
-			<source	media="(max-width: 600px)" srcset="images/placeholder-cajacel.png">
-			<img src="images/banner-placeholder.png">
-		</picture>
     </section>
 
     <section class="productos">
@@ -83,14 +98,10 @@
         </div>
     </section>
 	
-	<section>
-		
-	</section>
-
     <footer>
         <p>&copy; Carteras Bach</p>
     </footer>
-
+	
     <!-- Este script funciona como interruptor de toggle. -->
     <script>
         function toggleMenu() {
@@ -129,5 +140,32 @@
 			});
 		});
 	</script>
+	
+	<!-- Este es el script del slider. -->
+	<script>
+			let currentSlide = 0;
+			const slides = document.querySelectorAll('.slide');
+			const slider = document.querySelector('.slider');
+
+			function updateSlider() {
+				slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+			}
+
+			function nextSlide() {
+				currentSlide = (currentSlide + 1) % slides.length;
+				updateSlider();
+			}
+
+			function prevSlide() {
+				currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+				updateSlider();
+			}
+
+			function autoSlide() {
+				nextSlide();
+			}
+
+			setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
+	</script>	
 </body>
 </html>

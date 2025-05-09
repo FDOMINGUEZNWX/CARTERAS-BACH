@@ -43,6 +43,9 @@
         	<h1>Carteras </h1>
             <p>Nuestra selección de carteras.</p>
         </div>
+		
+		<div class="banner-overlay"></div>
+
 		<picture class="banner-img">
 			<source	media="(max-width: 600px)" srcset="images/placeholder-cajacel.png">
 			<img src="images/banner-placeholder.png">
@@ -125,16 +128,19 @@
     	</div>
     </section>
 
-<footer>
-    <p>&copy; Carteras Bach</p>
-</footer>
-
-<script>
-function toggleMenu() {
-    var x = document.getElementById("navegacion");
-    x.classList.toggle("mostrar");
-}
-</script>
-
+	<footer>
+		<p>&copy; Carteras Bach</p>
+	</footer>
+	
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("navegacion");
+            if (x.classList.contains("mostrar")) {
+                x.classList.remove("mostrar");
+            } else {
+                x.classList.add("mostrar");
+            }
+        }
+    </script>
 </body>
 </html>
