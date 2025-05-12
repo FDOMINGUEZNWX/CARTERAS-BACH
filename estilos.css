@@ -1,8 +1,9 @@
 *{margin: 0; padding: 0; box-sizing: border-box;} /*RESETEO GENERAL POR DEFECTO.*/
 
-.special-gothic-expanded-one-regular{ /*Tipografia personalizada*/
-    font-family: "Special Gothic Expanded One", sans-serif;
-    font-style: normal;
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .mulish-texto{ /*Tipografia personalizada*/
@@ -12,11 +13,14 @@
     font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth; /*suavizado de scrolleo.*/
+}
+
 body{
     font-family: 'Mulish', sans-serif;
     background-color: #999;
     color: #333;
-	padding-top: 72px; /*Tengo este gap precisamente porque quise que el header sea fijo, así compensa el espacio libre.*/
 }
 
 footer {
@@ -27,24 +31,29 @@ footer {
 }
 
 h1{
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
 	color: #FFFFFF;
 }
 
 h2{
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
       }
 
 header{
     position: fixed; /*El header fijo!!*/
     top: 0;
     width: 100%;
-    background-color: #B3381E;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: background-color 0.3s ease;
     padding: 10px 20px;
-  	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-	z-index: 1000; /*Está por las dudas en caso de que agregue algo y de la nada se ocurra clashear el elemento por arriba del header.*/
+	z-index: 2000; /*Está por las dudas en caso de que agregue algo y de la nada se ocurra clashear el elemento por arriba del header.*/
+	backdrop-filter: blur(10px); /*Desenfoque estilo gaussiano en el header.*/
 }
 
+header.scrolled {
+  	background-color: rgba(179, 56, 30, 0.95); /* Color sólido al hacer scroll */
+  	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
 
 .header-contenedor{
     display: flex;
@@ -55,6 +64,10 @@ header{
 }
 
 .logo img {
+    height: 3rem; /*lo mismo que 30px*/
+}
+
+.logo picture {
     height: 3rem; /*lo mismo que 30px*/
 }
 
@@ -101,7 +114,7 @@ header{
 .banner {
 	position: relative;
 	overflow: hidden;
-    height: 400px;
+    height: 425px;
     display: flex;
     align-items: center;
     color: white;
@@ -123,15 +136,15 @@ header{
 .banner-content {
 	position: absolute;
 	top: 50%;
-	left: 50px;
+	left: 90px;
 	transform: translateY(-50%);
 	z-index: 2;
 }
 
 .banner-content h1 {
 	position: relative;
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    margin-bottom: 0px;
 	z-index: 2;
 }
 
@@ -170,6 +183,86 @@ header{
     z-index: 1;
 }
 
+.whatsapp-boton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px; /*Tuve que agregar esto y el width porque se deformaba el circulo debido al tamaño de texto del fonts awesome*/
+    background-color: #25D366;
+    color: white;
+    font-size: 28px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    z-index: 1001; /*Como el header, seguro pueden haber elementos que quede encima de esto, mejor ya ponerlo arriba de todo desde ya*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+	
+}
+
+.whatsapp-boton:hover {
+    transform: scale(1.1);
+}
+
+.relleno { /*Relleno para que por ejemplo, haya espacio desde el main hasta el footer en carteras.html*/
+	padding: 50px;
+}
+
+.rellenocar {
+	padding: 5px;
+}
+
+/*PARA EL MAPA EN EL index.html*/
+
+.ubicacion {
+  padding: 60px 20px;
+}
+
+.ubicacion-contenedor {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	max-width: 800px;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.ubicacion-texto {
+	flex: 1 1 300px;
+}
+
+.ubicacion-texto h2 {
+	font-size: 32px;
+	margin-bottom: 10px;
+    color: #B3381E;
+}
+
+.ubicacion-texto p {
+	font-size: 18px;
+	line-height: 1.6;
+	margin-bottom: 25px;
+    color: #555;
+	text-align: center;
+}
+
+.ubicacion-mapa {
+	flex: 1 1 300px;
+	min-width: 280px;
+}
+
+.ubicacion-mapa iframe {
+	border-radius: 24px;
+	overflow: hidden;
+}
+
+.fa-clock-o {
+  	color: #B3381E;
+	margin-right: 8px;
+} 
+
 /*PARA EL SLIDER DE index.html*/
 .slider-container {
 	width: 100%;
@@ -200,41 +293,31 @@ header{
 	display: block;
 }
 
-.whatsapp-boton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 56px;
-    height: 56px; /*Tuve que agregar esto y el width porque se deformaba el circulo debido al tamaño de texto del fonts awesome*/
-    background-color: #25D366;
-    color: white;
-    font-size: 28px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    text-decoration: none;
-    z-index: 1001; /*Como el header, seguro pueden haber elementos que quede encima de esto, mejor ya ponerlo arriba de todo desde ya*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-	
-}
-
-.whatsapp-boton:hover {
-    transform: scale(1.1);
-}
-
 /*APLICABLE PARA index.html Y carteras.html*/
-
 .productos {
-    padding: 20px 20px;
+	padding: 20px 20px 0px;
     background-color: #f4f4f4;
 }
 
 .productos h2 {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 28px;
+    font-size: 32px;
+}
+.timer-contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px 40px;
+}
+
+#timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #B3381E;
+  padding: 6px 12px;
 }
 
 .productos-grilla {
@@ -289,7 +372,7 @@ header{
 .producto.ver-mas a { /*Esto hace que se ocupe toda la caja para clickear! sin esto, solamente sería posible clickear desde el texto.*/
   	color: white;
  	font-size: 28px;
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
   	text-decoration: none;
 	align-content: center;
   	display: block;      /*Hace que <a> ocupe todo el div */
@@ -330,7 +413,7 @@ header{
 .productos-todos h1 {
 	padding-bottom: 40px;
     font-size: 32px;
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     color: #333;
 }
 
@@ -345,18 +428,17 @@ header{
 
 /*APLICABLE SOLAMENTE PARA contacto.html*/
 .contacto {
-    padding: 40px;
+    padding: 30px;
     background-color: #f4f4f4;
-    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .contacto h1 {
-	padding-bottom: 40px;
+	margin-bottom: 30px;
     font-size: 32px;
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     color: #333;
 	text-align: center;
 }
@@ -405,7 +487,7 @@ header{
 
 /*APLICABLE SOLAMENTE PARA nosotros.hmtl*/
 .nosotros-pagina {
-    padding: 0px 20px 40px;
+    padding: 0px 20px 20px;
 	background-color: #FFFFFF;
 }
 
@@ -442,25 +524,24 @@ header{
 }
 
 .nosotros-texto .bloque h2 {
-    font-size: 24px;
+    font-size: 32px;
     color: #B3381E;
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .nosotros-texto .bloque p {
     font-size: 18px;
     color: #555;
-    line-height: 1.6;
+	line-height: 1.6;
 }
 
 .timeline-v2 {
-  background-color: #f9f9f9;
   padding: 60px 20px;
   text-align: center;
 }
 
 .timeline-v2 h2 {
-  font-size: 2.2rem;
+  font-size: 32px;
   color: #b2391c;
   margin-bottom: 40px;
 }
@@ -529,10 +610,30 @@ header{
         padding: 10px 0; /*Espacio entre los botones de arriba y abajo.*/
     }
 	
+	.banner {
+    	padding-left: 0;
+    	justify-content: center; /*centra horizontal*/
+		height: 500px;
+	}
+	
 	.banner-content {
-		left: 50%;
 		align-items: center;
 		text-align: center;
+		top:60%;
+		left: 0;
+		right: 0; 
+		margin: 0 auto; /*Estos tres mantienen centrado el texto.*/
+		width: 80%; /*Aseguro que el h1 quede siempre en dos líneas!!!*/
+	}
+	
+	.banner-content h1 { /*Adapto todo el banner para contenido de celular, en este caso es para el <h1>, el de abajo  es el <p>*/
+		font-size: 35px;
+		margin-bottom: 20px;
+	}
+
+	.banner-content p { /*Lo mismo que arriba, adaptamos el banner.*/
+		font-size: 20px;
+		margin-bottom: 30px;
 	}
 	
 	.banner-content a {
@@ -559,29 +660,6 @@ header{
 	
 	.nosotros-layout {
 		padding: 0px 20px;
-	}
-
-	.banner {
-    	padding-left: 0;
-    	justify-content: center; /*centra horizontal*/
-		height: 300px;
-	}
-	
-	.banner-content {
-		left: 0;
-		right: 0; 
-		margin: 0 auto; /*Estos tres mantienen centrado el texto.*/
-		width: 80%; /*Aseguro que el h1 quede siempre en dos líneas!!!*/
-	}
-	
-	.banner-content h1 { /*Adapto todo el banner para contenido de celular, en este caso es para el <h1>, el de abajo  es el <p>*/
-		font-size: 35px;
-		margin-bottom: 20px;
-	}
-
-	.banner-content p { /*Lo mismo que arriba, adaptamos el banner.*/
-		font-size: 20px;
-		margin-bottom: 30px;
 	}
 	
 	.evento {  /*Ajuste de todo el timeline de nosotros.html para que se adapte mejor a los celulares con respecto a la lectura.*/

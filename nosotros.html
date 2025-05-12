@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos.css" rel="stylesheet">
     <title>Nosotros | Carteras Bach</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<a href="#" class="whatsapp-boton" title="Chat de WhatsApp">
+<a href="https://www.whatsapp.com" class="whatsapp-boton" title="Chat de WhatsApp">
 	<i class="fa fa-whatsapp"></i>
 </a>
 	
@@ -20,7 +20,10 @@
         <div class="header-contenedor">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
+					<picture class="logo">
+						<source media="(max-width: 600px)" srcset="images/logo-blanco.png">
+						<img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
+					</picture>
                 </a>
             </div>
             <!-- Ícono del menú (visible en menos de 600px) -->
@@ -79,28 +82,29 @@
 							<p>Nacimos con la misión de crear carteras que reflejen autenticidad y elegancia, desde nuestro espacio en Facebook.</p>
 						</div>
 				</div>
-			<div class="evento">
-				<div class="año">2015</div>
-					<div class="contenido">
-						<h3>Crecimiento</h3>
-						<p>Expandimos nuestro alcance, ofreciendo entregas a domicilio.</p>
-					</div>
+				<div class="evento">
+					<div class="año">2015</div>
+						<div class="contenido">
+							<h3>Crecimiento</h3>
+							<p>Expandimos nuestro alcance, ofreciendo entregas a domicilio.</p>
+						</div>
+				</div>
+				<div class="evento">
+					<div class="año">2020</div>
+						<div class="contenido">
+							<h3>Expansión digital</h3>
+							<p>Nos expandimos a Instagram para catapultar aún más nuestro emprendimiento.</p>
+						</div>
+				</div>
+				<div class="evento">
+					<div class="año">2025</div>
+						<div class="contenido">
+							<h3>Segunda expansión digital</h3>
+							<p>Creamos nuestra página web, con el fin de que podamos brindar una mejor experiencia de compra.</p>
+						</div>
+				</div>
 			</div>
-			<div class="evento">
-				<div class="año">2020</div>
-					<div class="contenido">
-						<h3>Expansión digital</h3>
-						<p>Nos expandimos a Instagram para catapultar aún más nuestro emprendimiento.</p>
-					</div>
-			</div>
-			<div class="evento">
-				<div class="año">2025</div>
-					<div class="contenido">
-						<h3>Segunda expansión digital</h3>
-						<p>Creamos nuestra página web, con el fin de que podamos brindar una mejor experiencia de compra.</p>
-					</div>
-			</div>
-			</div>
+			<div class="relleno"></div>
 		</section>
 	</main>
 	
@@ -108,16 +112,6 @@
         <p>&copy; Carteras Bach</p>
     </footer>
 		
-    <!-- Este script funciona como interruptor de toggle. -->
-    <script>
-        function toggleMenu() {
-            var x = document.getElementById("navegacion");
-            if (x.classList.contains("mostrar")) {
-                x.classList.remove("mostrar");
-            } else {
-                x.classList.add("mostrar");
-            }
-        }
-    </script>
+	<script src="script.js" defer></script>
 </body>
 </html>

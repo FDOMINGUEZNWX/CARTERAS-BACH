@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos.css" rel="stylesheet">
     <title>Carteras Bach</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<a href="#" class="whatsapp-boton" title="Chat de WhatsApp">
+<a href="https://www.whatsapp.com" class="whatsapp-boton" title="Chat de WhatsApp">
 	<i class="fa fa-whatsapp"></i>
 </a>	
 	
@@ -20,8 +20,11 @@
         <div class="header-contenedor">
             <div class="logo">
                 <a href="#">
-                    <img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
-                </a>
+					<picture class="logo">
+						<source media="(max-width: 600px)" srcset="images/logo-blanco.png">
+						<img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
+					</picture>
+				</a>
             </div>
 
             <!-- Ícono del menú (visible en menos de 600px) -->
@@ -66,6 +69,7 @@
     </section>
 
     <section class="productos">
+		<div class="rellenocar"></div>
         <h2>Productos Destacados</h2>
         <div class="productos-grilla">
             <div class="producto">
@@ -96,76 +100,26 @@
       			<a href="carteras.html">Ver más</a>
     		</div>
         </div>
+		<div class="rellenocar"></div>
+
+		<section class="ubicacion">
+			<div class="ubicacion-contenedor">
+				<div class="ubicacion-texto">
+					<h2>¿Dónde estamos?</h2>
+					<p>Encontranos en nuestro showroom ubicado en Tres de Febrero, cerca de la línea Urquiza.</p>
+					<p><i class="fa fa-clock-o fa-lg"></i> <strong>A 20 minutos desde la estación Federico Lacroze.</strong></p>
+				</div>
+				<div class="ubicacion-mapa">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105093.0958320561!2d-58.66706235959278!3d-34.60013450381982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbbc4d4ebd84d%3A0x37006eb98f7c12d2!2sTres%20de%20Febrero%20Partido%2C%20Buenos%20Aires%20Province!5e0!3m2!1sen!2sar!4v1747084116892!5m2!1sen!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</section>
     </section>
 	
     <footer>
         <p>&copy; Carteras Bach</p>
     </footer>
-	
-    <!-- Este script funciona como interruptor de toggle. -->
-    <script>
-        function toggleMenu() {
-            var x = document.getElementById("navegacion");
-            if (x.classList.contains("mostrar")) {
-                x.classList.remove("mostrar");
-            } else {
-                x.classList.add("mostrar");
-            }
-        }
-    </script>
-	<!-- Estuve teniendo problemas con la adaptación del banner para que cuando este quede chico, el botón de "ver colección" desaparezca para que así puedas solamente tocar el banner, por eso está este script. -->
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			const banner = document.querySelector(".banner")
-    		// Esta parte verifica que la pantalla sea más pequeña que la resolución del mediaQuery, o sea, 600px.
-    		const mediaQuery = window.matchMedia("(max-width: 600px)");
 
-    		// Esta función existe para manejar el click únicamente en pantallas menores a 600px.
-    		function handleBannerClick() {
-      		window.location.href = "carteras.html";
-			}
-
-			// Si nuestra pantalla es menor a 600px, agregamos el evento
-			if (mediaQuery.matches) {
-			  banner.addEventListener("click", handleBannerClick);
-			}
-
-		// Pongo acá un listener, o sea, una respuesta a los eventos, para manejar los cambios en la pantalla.
-			mediaQuery.addEventListener("change", function() {
-		  	if (mediaQuery.matches) {
-			banner.addEventListener("click", handleBannerClick); // agregamos evento en pantalla menor a 600px...
-		  	} else {
-			banner.removeEventListener("click", handleBannerClick); // eliminamos evento en pantalla mayor a 600px...
-		  	}
-			});
-		});
-	</script>
-	
-	<!-- Este es el script del slider. -->
-	<script>
-			let currentSlide = 0;
-			const slides = document.querySelectorAll('.slide');
-			const slider = document.querySelector('.slider');
-
-			function updateSlider() {
-				slider.style.transform = `translateX(${-currentSlide * 100}%)`;
-			}
-
-			function nextSlide() {
-				currentSlide = (currentSlide + 1) % slides.length;
-				updateSlider();
-			}
-
-			function prevSlide() {
-				currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-				updateSlider();
-			}
-
-			function autoSlide() {
-				nextSlide();
-			}
-
-			setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
-	</script>	
+	<script src="script.js" defer></script>
 </body>
 </html>

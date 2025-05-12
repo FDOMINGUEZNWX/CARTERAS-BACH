@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos.css" rel="stylesheet">
     <title>Contacto | Carteras Bach</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<a href="#" class="whatsapp-boton" title="Chat de WhatsApp">
+<a href="https://www.whatsapp.com" class="whatsapp-boton" title="Chat de WhatsApp">
 	<i class="fa fa-whatsapp"></i>
 </a>	
 	
@@ -20,8 +20,11 @@
         <div class="header-contenedor">
 			<div class="logo">
                 <a href="index.html">
-                    <img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
-                </a>
+					<picture class="logo">
+						<source media="(max-width: 600px)" srcset="images/logo-blanco.png">
+						<img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
+					</picture>
+				</a>
             </div>
 			
             <!-- Ícono del menú (visible en menos de 600px) -->
@@ -53,29 +56,20 @@
     </section>
 	
     <main class="contacto">
-		<h1>Cualquier duda que tengas nosotros te lo respondemos.</h1>
+		<h1>Dejanos tus dudas</h1>
         <form class="formulario">
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="Tu correo electrónico" required>
             <textarea placeholder="Escribí tu mensaje..." required></textarea>
             <button type="submit">Enviar</button>
         </form>
+		<div class="relleno"></div>
     </main>
 
     <footer>
         <p>&copy; Carteras Bach</p>
     </footer>
 	    
-    <!-- Este script funciona como interruptor de toggle. -->
-    <script>
-        function toggleMenu() {
-            var x = document.getElementById("navegacion");
-            if (x.classList.contains("mostrar")) {
-                x.classList.remove("mostrar");
-            } else {
-                x.classList.add("mostrar");
-            }
-        }
-    </script>
+	<script src="script.js" defer></script>
 </body>
 </html>
