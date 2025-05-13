@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-const header = document.querySelector("header"); 
-	//Aseguramos que el header exista en el DOM antes de ser llamado al script... Si lo ponemos arriba de todo, arruina por ejemplo el toggle.
-
+const header = document.querySelector("header"); //Aseguramos que el header exista en el DOM antes de ser llamado al script... Si lo ponemos arriba de todo, arruina por ejemplo el toggle.
 //Este script es para cuando scrolleás, el header se torna en un sólido.
 window.addEventListener("scroll", () => {
 	if (window.scrollY > 60) {
@@ -50,31 +48,46 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 //Este es el script del slider.
 
+document.addEventListener("DOMContentLoaded", function() {
+const slider = document.querySelector('.slider');
+let slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
-	const slides = document.querySelectorAll('.slide');
-	const slider = document.querySelector('.slider');
+let isTransitioning = false;
+
+	// Clonamos el primer slide y lo agregamos al final
+	const firstClone = slides[0].cloneNode(true);
+	slider.appendChild(firstClone);
+
+	slides = document.querySelectorAll('.slide'); // actualizamos la lista
 
 	function updateSlider() {
-		slider.style.transform = `translateX(${-currentSlide * 100}%)`;
-	}
-
-	function nextSlide() {
-		currentSlide = (currentSlide + 1) % slides.length;
-		updateSlider();
-	}
-
-	function prevSlide() {
-		currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-		updateSlider();
+		slider.style.transition = "transform 0.5s ease-in-out";
+		slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 	}
 
 	function autoSlide() {
-		nextSlide();
+		if (isTransitioning) return;
+		currentSlide++;
+		updateSlider();
+		isTransitioning = true;
 	}
 
+	// Detectamos cuando termina la transición
+	slider.addEventListener("transitionend", () => {
+		isTransitioning = false;
+		// Si estamos en el clon, saltamos instantáneamente al real
+		if (currentSlide === slides.length - 1) {
+			slider.style.transition = "none";
+			currentSlide = 0;
+			slider.style.transform = `translateX(0%)`;
+		}
+	});
+
 	setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
+});
 
 //Timer para carteras.html//
+document.addEventListener("DOMContentLoaded", function() {
 function updateCountdown() {
 	const now = new Date();
 	const nextSunday = new Date();
@@ -95,3 +108,4 @@ function updateCountdown() {
 	}
 
 	updateCountdown();
+});
