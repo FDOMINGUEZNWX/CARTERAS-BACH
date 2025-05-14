@@ -14,7 +14,8 @@
 }
 
 html {
-  scroll-behavior: smooth; /*suavizado de scrolleo.*/
+  	scroll-behavior: smooth; /*suavizado de scrolleo.*/
+	background-color: #B3381E;
 }
 
 body{
@@ -23,12 +24,12 @@ body{
     color: #333;
 }
 
-footer {
+/*footer { (quedó reemplazado por .footer para aprovechar el flex.)
 	background-color: #B3381E;
   	color: white;
   	text-align: center;
   	padding: 20px 10px;
-}
+}*/
 
 h1{
     font-family: "Bebas Neue", sans-serif;
@@ -59,8 +60,7 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
+    margin: 0 10px;
 }
 
 .logo img {
@@ -102,7 +102,6 @@ header.scrolled {
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    transition: color 0.3s;
     transition: transform 0.1s ease; /*Suavizado de animacion...*/
 
 }
@@ -112,10 +111,10 @@ header.scrolled {
 }
 
 .banner {
+	display: flex;
 	position: relative;
 	overflow: hidden;
-    height: 425px;
-    display: flex;
+    height: 60vh;
     align-items: center;
     color: white;
 }
@@ -136,7 +135,7 @@ header.scrolled {
 .banner-content {
 	position: absolute;
 	top: 50%;
-	left: 90px;
+	left: 5%;
 	transform: translateY(-50%);
 	z-index: 2;
 }
@@ -183,6 +182,8 @@ header.scrolled {
     z-index: 1;
 }
 
+/*BOTON DE WHATSAPP*/
+
 .whatsapp-boton {
     position: fixed;
     bottom: 20px;
@@ -199,12 +200,13 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
-	
+	opacity: 50%;
+    transition: transform 0.2s ease;	
 }
 
 .whatsapp-boton:hover {
     transform: scale(1.1);
+	opacity: 100%;
 }
 
 .relleno { /*Relleno para que por ejemplo, haya espacio desde el main hasta el footer en carteras.html*/
@@ -506,8 +508,12 @@ header.scrolled {
     gap: 40px;
 }
 
+.nosotros-imagen {
+	flex: 1 1 350px;
+	max-width: 400px;
+}
+
 .nosotros-imagen img {
-    max-width: 400px;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -523,10 +529,12 @@ header.scrolled {
 }
 
 .nosotros-texto {
-    max-width: 600px;
+	flex: 1 1 250px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     gap: 40px;
+	text-align: justify;
 }
 
 .nosotros-texto .bloque h2 {
@@ -587,13 +595,61 @@ header.scrolled {
 .contenido h3 {
   margin-bottom: 10px;
   font-size: 1.2rem;
-  color: #333;
+  color: #333333;
 }
 
 .contenido p {
-  color: #555;
+  color: #555555;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+/*AJUSTE PARA QUE CADA AÑO ESTÉ A LA DERECHA.*/
+.timeline-v2-container .evento:nth-child(even){
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.timeline-v2-container .evento:nth-child(even) .contenido{
+  border-left: none;
+  border-right: 4px solid #b2391c;
+}
+
+
+/*Para el footer*/
+.footer {
+	background-color: #B3381E;
+  	color: white;
+  	padding: 20px 10px;
+	font-family: "Mulish", sans-serif;
+}
+
+.footer-contenido {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0% 8%;
+}
+
+.footer p {
+	margin: 0;
+}
+
+.redes {
+	display: flex;
+	gap: 15px;
+}
+
+.redes a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.redes a:hover {
+  color: #aaaaaa;
 }
 
 @media (max-width: 600px) {
@@ -619,7 +675,7 @@ header.scrolled {
 	.banner {
     	padding-left: 0;
     	justify-content: center; /*centra horizontal*/
-		height: 500px;
+		height: 55vh;
 	}
 	
 	.banner-content {
@@ -647,6 +703,10 @@ header.scrolled {
 		text-align: center;
   	}
 	
+	.banner-overlay {
+    	background: rgba(0, 0, 0, 0.75); /* 75% de opacidad negra */
+	}
+	
 	.producto {
 		width:160px; /*Ajusto las cajas para que sean más chicos. Aunque no descarto la posibilidad de un futuro en implementar un scroll para que no ocupe otra fila.*/
 	}
@@ -668,6 +728,10 @@ header.scrolled {
 		padding: 0px 20px;
 	}
 	
+	.nosotros-texto .bloque:nth-child(2) { /*el .bloque:nth-child(2) elije al segundo bloque desde el html.*/
+		text-align: right; /*esto lo que hace al final es alinear el texto por la derecha, asi no queda todo por la izquierda.*/
+	}
+	
 	.evento {  /*Ajuste de todo el timeline de nosotros.html para que se adapte mejor a los celulares con respecto a la lectura.*/
 		flex-direction: column;
 		text-align: center;
@@ -678,6 +742,15 @@ header.scrolled {
 		text-align: center;
 		min-width: unset;
   	}
+	
+	/*Previamente hice que los numeros pares de los años estén alineados a la derecha. Voy a revertirlos para que quede parejo.*/
+	.timeline-v2-container .evento:nth-child(even){
+  		flex-direction: column;
+  		text-align: center;
+	}
+	.timeline-v2-container .evento:nth-child(even) .contenido{
+  		border-right: none;
+	}
 	
 	.whatsapp-mockup { /*Se adapta el globito de Whatsapp para que en los celulares esté un poco más grande.*/
 		width: 76px;
@@ -691,6 +764,16 @@ header.scrolled {
 		border-top: 4px solid #b2391c;
 		border-radius: 20px;
   	}
+	
+	.footer-contenido { /*Ajuste en celulares para que el texto y las redes sociales queden en el centro en vez del "space-between".*/
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	
+	.redes { /*Margen superior para que no esté pegado sobre el texto de carteras bach.*/
+		margin-top: 10px;
+	}
 }
 
 @media (max-width: 380px) { /*Por las dudas agrego esto, porque los elementos de productos estaban quedando demasiado grandes y me hacía una 	 sola fila.*/
