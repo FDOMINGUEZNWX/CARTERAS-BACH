@@ -517,7 +517,7 @@ header.scrolled {
     width: 100%;
     height: auto;
     object-fit: contain;
-	border-radius: 0px 24px 24px 0px;
+	border-radius: 24px;
 	opacity: 60%;
 	display: block;
 }
