@@ -308,19 +308,20 @@ header.scrolled {
     font-size: 32px;
 }
 .timer-contenedor {
-  display: flex;
-  justify-content: center;
-  margin: 20px 20px 40px;
+	display: flex;
+	justify-content: center;
+	margin: 0 20px;
+	
 }
 
 #timer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  font-size: 18px;
-  color: #B3381E;
-  padding: 6px 12px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: bold;
+	font-size: 18px;
+	color: #B3381E;
+	padding: 6px 12px;
 }
 
 .productos-grilla {
