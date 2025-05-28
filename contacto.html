@@ -57,12 +57,16 @@
 	
     <main class="contacto">
 		<h1>Dejanos tus dudas</h1>
-        <form class="formulario">
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu correo electrónico" required>
-            <textarea placeholder="Escribí tu mensaje..." required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+		<form class="formulario" id="formulario-contacto">
+			<input type="text" placeholder="Tu nombre" name="nombre" required>
+			<input type="email" placeholder="Tu correo electrónico" name="email" required>
+			<textarea placeholder="Escribí tu mensaje..." name="mensaje" required></textarea>
+			<button type="submit">Enviar</button>
+		</form>
+
+		<div id="mensaje-exito" style="display: none; margin-top: 20px; color: green; font-weight: bold;">
+			¡Gracias por contactarnos!
+		</div>
 		<div class="relleno"></div>
     </main>
 

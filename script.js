@@ -109,3 +109,9 @@ function updateCountdown() {
 
 	updateCountdown();
 });
+
+document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita el envío real
+    document.getElementById("mensaje-exito").style.display = "block";
+    this.reset(); // Limpia los campos
+});
