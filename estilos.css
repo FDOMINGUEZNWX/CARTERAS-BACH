@@ -76,6 +76,32 @@ header.scrolled {
     gap: 2rem;
 }
 
+.navegacion a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+	position: relative; /* Necesario para usar ::after */
+	transition: color 0.3s ease;
+}
+
+.navegacion a::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -4px; /* ligeramente debajo del texto */
+	transform: translateX(-50%) scaleX(0);
+	transform-origin: center;
+	width: 100%;
+	height: 2px;
+	background-color: white;
+	transition: transform 0.3s ease;
+}
+
+.navegacion a:hover::after {
+	transform: translateX(-50%) scaleX(1);
+}
+
 .navegacion.mostrar { /*Para cuando la pantalla sea menor a 600px, desplegamos el menu de navegacion y eso.*/
     display: flex;
     flex-direction: column;
@@ -401,7 +427,7 @@ header.scrolled {
 }
 
 .producto.ver-mas:hover {
-  background-color: #770507;
+  	background-color: #770507;
 }
 
 .info { /*Es donde está la información del precio, financiación, etc.*/
@@ -678,6 +704,66 @@ header.scrolled {
 }
 
 
+@media (max-width: 1300px) {
+	.producto {
+		width: 240px;
+	}
+	
+	.producto.ver-mas {
+		width:240px;
+		font-size: 20px;
+	}
+		
+	.producto.ver-mas a{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 1070px) {
+	.producto {
+		width: 200px;
+	}
+	
+	.producto.ver-mas {
+		width:200px;
+		font-size: 20px;
+	}
+		
+	.producto.ver-mas a{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.producto {
+		width: 320px;
+	}
+	
+	.producto.ver-mas {
+		width:320px;
+		font-size: 28px;
+	}
+		
+	.producto.ver-mas a{
+		font-size: 28px;
+	}
+}
+
+@media (max-width: 700px) {
+	.producto {
+		width: 240px;
+	}
+	
+	.producto.ver-mas {
+		width:240px;
+		font-size: 20px;
+	}
+		
+	.producto.ver-mas a{
+		font-size: 20px;
+	}
+}
+
 @media (max-width: 600px) {
 	
 	.anuncio {
@@ -744,7 +830,7 @@ header.scrolled {
 	}
 	
 	.producto {
-		width:160px; /*Ajusto las cajas para que sean más chicos. Aunque no descarto la posibilidad de un futuro en implementar un scroll para que no ocupe otra fila.*/
+		width:200px; /*Ajusto las cajas para que sean más chicos. Aunque no descarto la posibilidad de un futuro en implementar un scroll para que no ocupe otra fila.*/
 	}
 	
 	.producto.ver-mas {
@@ -812,17 +898,32 @@ header.scrolled {
 	}
 }
 
-@media (max-width: 380px) { /*Por las dudas agrego esto, porque los elementos de productos estaban quedando demasiado grandes y me hacía una 	 sola fila.*/
+@media (max-width: 460px) {
+	.producto {
+		width: 160px;
+	}
+	
+	.producto.ver-mas {
+		width:160px;
+		font-size: 20px;
+	}
+		
+	.producto.ver-mas a{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 400px) {
 	.producto {
 		width: 140px;
 	}
 	
 	.producto.ver-mas {
 		width:140px;
-		font-size: 18px;
+		font-size: 20px;
 	}
 		
 	.producto.ver-mas a{
-		font-size: 18px;
+		font-size: 20px;
 	}
 }
