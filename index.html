@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+<div class="carrito-flotante">
+    <i class="fa fa-shopping-cart"></i>
+    <span id="contador-carrito">0</span>
+</div>
+
+<div id="carrito-desplegable" class="carrito-desplegable oculto">
+    <h4>Carrito</h4>
+    <ul id="lista-carrito"></ul>
+</div>
+
 <a href="https://www.whatsapp.com" class="whatsapp-boton" title="Chat de WhatsApp">
 	<i class="fa fa-whatsapp"></i>
 </a>	
@@ -79,7 +89,7 @@
                 <div class="info">
                     <h3>Osaka</h3>
                     <p><strong>$30.000</strong> | 3 cuotas sin interés</p>
-                    <button class="btn-comprar">Comprar</button>
+                    <button class="btn-comprar">Agregar al carrito</button>
                 </div>
             </div>
             <div class="producto">
@@ -87,7 +97,7 @@
                 <div class="info">
                     <h3>Ágata</h3>
                     <p><strong>$30.500</strong> | 3 cuotas sin interés</p>
-                    <button class="btn-comprar">Comprar</button>
+                    <button class="btn-comprar">Agregar al carrito</button>
                 </div>
             </div>
             <div class="producto">
@@ -95,7 +105,7 @@
                 <div class="info">
                     <h3>Noir</h3>
                     <p><strong>$35.000</strong> | 3 cuotas sin interés</p>
-                    <button class="btn-comprar">Comprar</button>
+                    <button class="btn-comprar">Agregar al carrito</button>
                 </div>
             </div>
 			<div class="producto ver-mas">
@@ -121,7 +131,15 @@
 		</section>
 		<div class="rellenoanuncio"></div>
     </section>
-	
+
+	<section class="newsletter">
+		<h2>Suscribite al newsletter</h2>
+		<p>Recibí novedades, descuentos y lanzamientos exclusivos.</p>
+		<form class="newsletter-formulario">
+			<input type="email" placeholder="Tu correo electrónico" required>
+			<button type="submit">Suscribirme</button>
+		</form>
+	</section>
 
     <footer class="footer">
 		<div class="footer-contenido">

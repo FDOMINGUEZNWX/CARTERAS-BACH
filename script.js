@@ -110,8 +110,39 @@ function updateCountdown() {
 	updateCountdown();
 });
 
-document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío real
-    document.getElementById("mensaje-exito").style.display = "block";
-    this.reset(); // Limpia los campos
+const formularioContacto = document.getElementById("formulario-contacto");
+if (formularioContacto) {
+    formularioContacto.addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("mensaje-exito").style.display = "block";
+        this.reset();
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    let carrito = []; /*Creamos una lista vacia...*/
+    const contadorCarrito = document.getElementById("contador-carrito"); /*Buscamos el elemento donde muestra cuantos productos hay en el carrito, guardándolo más adelante*/
+    const listaCarrito = document.getElementById("lista-carrito"); 
+
+    document.querySelectorAll(".btn-comprar").forEach(boton => { /*Buscamos TODOS los elementos con la clase .btn-comprar y agregamos un evento click*/
+        boton.addEventListener("click", function () {
+            const producto = this.closest(".producto");
+            const nombre = producto.querySelector("h3").textContent;
+            const precio = producto.querySelector("p strong").textContent;
+
+            carrito.push({ nombre, precio });
+            actualizarCarrito();
+        });
+    });
+
+    function actualizarCarrito() { /*Acá es donde ocurre la actualización */
+        contadorCarrito.textContent = carrito.length;
+        listaCarrito.innerHTML = "";
+
+        carrito.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.nombre} - ${item.precio}`;
+            listaCarrito.appendChild(li);
+        });
+    }
 });

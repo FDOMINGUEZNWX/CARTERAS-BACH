@@ -11,6 +11,16 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+<div class="carrito-flotante">
+    <i class="fa fa-shopping-cart"></i>
+    <span id="contador-carrito">0</span>
+</div>
+
+<div id="carrito-desplegable" class="carrito-desplegable oculto">
+    <h4>Carrito</h4>
+    <ul id="lista-carrito"></ul>
+</div>
+
 <a href="https://www.whatsapp.com" class="whatsapp-boton" title="Chat de WhatsApp">
 	<i class="fa fa-whatsapp"></i>
 </a>	
@@ -65,10 +75,19 @@
 		</form>
 
 		<div id="mensaje-exito" style="display: none; margin-top: 20px; color: green; font-weight: bold;">
-			¡Gracias por contactarnos!
+			¡Gracias por contactarnos! En menos de 2 días hábiles te respondemos.
 		</div>
 		<div class="relleno"></div>
     </main>
+
+	<section class="newsletter">
+		<h2>Suscribite al newsletter</h2>
+		<p>Recibí novedades, descuentos y lanzamientos exclusivos.</p>
+		<form class="newsletter-formulario">
+			<input type="email" placeholder="Tu correo electrónico" required>
+			<button type="submit">Suscribirme</button>
+		</form>
+	</section>
 
     <footer class="footer">
 		<div class="footer-contenido">

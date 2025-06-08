@@ -63,12 +63,20 @@ header.scrolled {
     margin: 0 10px;
 }
 
+.logo {
+	transition: transform 0.1s ease-in-out;
+}
+
 .logo img {
     height: 3rem; /*lo mismo que 30px*/
 }
 
 .logo picture {
     height: 3rem; /*lo mismo que 30px*/
+}
+
+.logo:hover {
+	transform: scale(1.02);
 }
 
 .navegacion {
@@ -103,16 +111,8 @@ header.scrolled {
 }
 
 .navegacion.mostrar { /*Para cuando la pantalla sea menor a 600px, desplegamos el menu de navegacion y eso.*/
-    display: flex;
-    flex-direction: column;
     background-color: #B3381E;
-	align-items: center;	/*Está centrando todo el texto... */
-	position: absolute;     /*Con el fixed tapa TODO el espacio, me gusta mas con absolute...*/
-	left: 0; 				/*Si no lo agrego, queda corrido hacia la izquierda, dejando un espacio a la derecha*/
-    top: 70px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 0px;
+    border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -233,6 +233,41 @@ header.scrolled {
 .whatsapp-boton:hover {
     transform: scale(1.1);
 	opacity: 100%;
+}
+
+/*PARA EL CARRITO DE COMPRA COMO SI FUERA EL BOTÓN DE WHATSAPP*/
+.carrito-flotante {
+    position: fixed;
+    bottom: 100px; /* Justo encima del botón de WhatsApp */
+    right: 20px;
+    width: 56px;
+    background-color: #ffffff;
+    color: #B3381E;
+    font-size: 28px;
+    padding: 10px 14px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1002;
+	opacity: 50%;
+    transition: transform 0.2s ease;	
+}
+
+.carrito-flotante:hover {
+    color: black;
+	opacity: 100%;
+    transform: scale(1.1);
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px 6px;
 }
 
 .relleno { /*Relleno para que por ejemplo, haya espacio desde el main hasta el footer en carteras.html*/
@@ -359,7 +394,7 @@ header.scrolled {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-	transition: transform 0.1 ease;	
+	transition: transform 0.1s ease;	
 }
 
 .producto {
@@ -571,7 +606,7 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     gap: 40px;
-	text-align: justify;
+	text-align: left;
 }
 
 .nosotros-texto .bloque h2 {
@@ -593,7 +628,7 @@ header.scrolled {
 
 .timeline-v2 h2 {
   font-size: 32px;
-  color: #b2391c;
+  color: #B3381E;
   margin-bottom: 40px;
 }
 
@@ -615,7 +650,7 @@ header.scrolled {
 .año {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #b2391c;
+  color: #B3381E;
   min-width: 80px;
   text-align: right;
 }
@@ -623,7 +658,7 @@ header.scrolled {
 .contenido {
   background: white;
   padding: 20px;
-  border-left: 4px solid #b2391c;
+  border-left: 4px solid #B3381E;
   border-radius: 4px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   flex: 1;
@@ -648,7 +683,7 @@ header.scrolled {
 }
 .timeline-v2-container .evento:nth-child(even) .contenido{
   border-left: none;
-  border-right: 4px solid #b2391c;
+  border-right: 4px solid #B3381E;
 }
 
 
@@ -703,8 +738,61 @@ header.scrolled {
 	border: none;
 }
 
+/*NEWSLETTER*/
+.newsletter {
+	background-color: #B3381E;
+	color: white;
+	padding: 40px 10px 20px;
+	text-align: center;
+	font-family: 'Mulish', sans-serif;
+}
 
-@media (max-width: 1300px) {
+.newsletter h2 {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 34px;
+	margin-bottom: 10px;
+}
+
+.newsletter p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.newsletter-formulario {
+	max-width: 400px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+}
+
+.newsletter-formulario input[type="email"] {
+	height: 45px;
+	padding: 10px;
+	width: 100%;
+	border-radius: 4px;
+	border: none;
+}
+
+.newsletter-formulario button {
+	position: relative;
+	padding: 10px 20px;
+    text-decoration: none;
+	background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-formulario button:hover {
+    background-color: #a83224;
+}
+
+@media (max-width: 1300px) { /*MEDIA QUERY AJUSTE MANUAL DE LOS ELEMENTOS DEL FLEXBOX DE LAS CARTERAS*/
 	.producto {
 		width: 240px;
 	}
@@ -719,7 +807,7 @@ header.scrolled {
 	}
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 1070px) { /*MEDIA QUERY AJUSTE MANUAL DE LOS ELEMENTOS DEL FLEXBOX DE LAS CARTERAS*/
 	.producto {
 		width: 200px;
 	}
@@ -734,7 +822,7 @@ header.scrolled {
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) { /*MEDIA QUERY AJUSTE MANUAL DE LOS ELEMENTOS DEL FLEXBOX DE LAS CARTERAS*/
 	.producto {
 		width: 320px;
 	}
@@ -749,7 +837,7 @@ header.scrolled {
 	}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 700px) { /*MEDIA QUERY AJUSTE MANUAL DE LOS ELEMENTOS DEL FLEXBOX DE LAS CARTERAS*/
 	.producto {
 		width: 240px;
 	}
@@ -764,7 +852,7 @@ header.scrolled {
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /*MEDIA QUERY PRINCIPAL - MEDIA QUERY PRINCIPAL - MEDIA QUERY PRINCIPAL - MEDIA QUERY PRINCIPAL - MEDIA QUERY PRINCIPAL - */
 	
 	.anuncio {
 		height: 600px;
@@ -776,11 +864,28 @@ header.scrolled {
 	}
 	
     .navegacion {
-    	display: none; /*Ocultamos la navegacion.*/
-        flex-direction: column; /*En vez de que esté de izquierda a derecha, ahora pasa a ser una columna*/
-        width: 100%; /*Trata de ocupar todo el ancho que puede.*/
-        background-color: #B3381E;
+		display: flex;
+		flex-direction: column; /*pone al nav en columnas*/
+		position: absolute; /*ajusta el menu de hamburguesa hacia la punta derecha*/
+		width: 100%; /*el menu desplegable queda en el centro*/
+		top: 70px; /*sin esto, el menu cuando es desplegado tiene una parte de la transicion en el top de la pagina*/
+		left: 0; /*sin esto, el menu cuando es desplegado tiene una parte de la transicion en la izquierda de la pagina*/
+		right: 20px; /*sin esto, el menu cuando es desplegado tiene una parte de la transicion en la derecha de la pagina*/
+		background-color: #B3381E; /*coincidentemente, si lo saco el texto no va a tener por donde aferrarse con el overflow. por ende, debo ponerle desde aca un background-color a pesar de la redundancia*/
+		overflow: hidden; /*procura que los elementos no salgan afuera*/
+		max-height: 0; /*parte de la transicion*/
+		opacity: 0; /*parte de la transicion*/
+		transition: max-height 0.4s ease, opacity 0.3s ease;
+		padding: 0 10px;
+		align-items: center;
+		z-index: 1000;
     }
+
+	.navegacion.mostrar {
+		max-height: 300px;
+		opacity: 1; /*Funciona como display: block cuando estaba con el display none desde el desktop. Al menos no encontraba la forma de usar la transición, así que lo reemplacé con 'opacity'... Esto puede ocasionar un error cuando salís del responsive al desktop en contrapuesto con la solución anterior, pero en términos reales, uno nunca podría experimentar esa situación.*/
+		padding: 20px;
+	}
 
     .menu-icon {
         display: block; /*Aparece finalmente el menu de hamburguesa.*/
@@ -883,7 +988,7 @@ header.scrolled {
 
   	.contenido { /*Ajuste de las cajas del timeline, sacamos el borde de la izquierda, se lo dejamos arriba... y redondeamos más la curva de la caja.*/
 		border-left: none;
-		border-top: 4px solid #b2391c;
+		border-top: 4px solid #B3381E;
 		border-radius: 20px;
   	}
 	
@@ -896,9 +1001,20 @@ header.scrolled {
 	.redes { /*Margen superior para que no esté pegado sobre el texto de carteras bach.*/
 		margin-top: 10px;
 	}
+
+	.newsletter-formulario {
+    	flex-direction: column;
+  }
+
+  
+  .newsletter-formulario input[type="email"],
+  .newsletter-formulario button {
+		width: 100%;
+		height: 45px;
+  }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 460px) { /*MEDIA QUERY AJUSTE MANUAL DE LOS ELEMENTOS DEL FLEXBOX DE LAS CARTERAS*/
 	.producto {
 		width: 160px;
 	}
@@ -913,7 +1029,7 @@ header.scrolled {
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 400px) { /*MEDIA QUERY AJUSTE MANUAL DE LOS ELEMENTOS DEL FLEXBOX DE LAS CARTERAS*/
 	.producto {
 		width: 140px;
 	}
