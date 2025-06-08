@@ -9,6 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="csslb/lightbox.min.css">
 </head>
 
 <a href="https://www.whatsapp.com" class="whatsapp-boton" title="Chat de WhatsApp">
@@ -60,7 +61,9 @@
 		<h2>Carteras de la semana</h2>
         <div class="productos-grilla">
             <div class="producto">
-                <img src="images/mod1.png" alt="Cartera 1">
+                <a href="images/mod1.png" data-lightbox="galeria-carteras" title="Modelo Osaka">
+                    <img src="images/mod1-min.png" alt="Cartera Osaka" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Osaka</h3>
                     <p><strong>$30.000</strong> | 3 cuotas sin interés</p>
@@ -68,7 +71,9 @@
                 </div>
             </div>
             <div class="producto">
-                <img src="images/mod2.png" alt="Cartera 2">
+                <a href="images/mod2.png" data-lightbox="galeria-carteras" title="Modelo Ágata">
+                    <img src="images/mod2-min.png" alt="Cartera Ágata" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Ágata</h3>
                     <p><strong>$30.500</strong> | 3 cuotas sin interés</p>
@@ -76,7 +81,9 @@
                 </div>
             </div>
             <div class="producto">
-                <img src="images/mod3.png" alt="Cartera 3">
+                <a href="images/mod3.png" data-lightbox="galeria-carteras" title="Modelo Boreal">
+                    <img src="images/mod3-min.png" alt="Cartera Boreal" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Boreal</h3>
                     <p><strong>$31.200</strong> | 3 cuotas sin interés</p>
@@ -84,7 +91,9 @@
                 </div>
             </div>
             <div class="producto">
-                <img src="images/mod4.png" alt="Cartera 4">
+                <a href="images/mod4.png" data-lightbox="galeria-carteras" title="Modelo Sahara">
+                    <img src="images/mod4-min.png" alt="Cartera Sahara" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Sahara</h3>
                     <p><strong>$33.000</strong> | 3 cuotas sin interés</p>
@@ -99,7 +108,9 @@
 		<h2>Mochilas de la semana</h2>
         <div class="productos-grilla">
             <div class="producto">
-                <img src="images/moc1.png" alt="Mochila 1">
+                <a href="images/moc1.png" data-lightbox="galeria-carteras" title="Modelo Noir">
+                    <img src="images/moc1-min.png" alt="Mochila Sahara" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Noir</h3>
                     <p><strong>$35.000</strong> | 3 cuotas sin interés</p>
@@ -107,7 +118,9 @@
                 </div>
             </div>
             <div class="producto">
-                <img src="images/moc2.png" alt="Mochila 2">
+                <a href="images/moc2.png" data-lightbox="galeria-carteras" title="Modelo Omen">
+                    <img src="images/moc2-min.png" alt="Mochila Omen" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Omen</h3>
                     <p><strong>$35.500</strong> | 3 cuotas sin interés</p>
@@ -115,7 +128,9 @@
                 </div>
             </div>
             <div class="producto">
-                <img src="images/moc3.png" alt="Mochila 3">
+                <a href="images/moc3.png" data-lightbox="galeria-carteras" title="Modelo Delta">
+                    <img src="images/moc3-min.png" alt="Mochila Delta" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Delta</h3>
                     <p><strong>$36.200</strong> | 3 cuotas sin interés</p>
@@ -123,7 +138,9 @@
                 </div>
             </div>
             <div class="producto">
-                <img src="images/moc4.png" alt="Mochila 4">
+                <a href="images/moc4.png" data-lightbox="galeria-carteras" title="Modelo Solsticio">
+                    <img src="images/moc4-min.png" alt="Mochila Solticio" style="width: 100%;">
+                </a>
                 <div class="info">
                     <h3>Solsticio</h3>
                     <p><strong>$38.000</strong> | 3 cuotas sin interés</p>
@@ -145,7 +162,7 @@
 
     <footer class="footer">
 		<div class="footer-contenido">
-			<p>&copy; Carteras Bach</p>
+			<p>© Carteras Bach · Tres de Febrero</p>
 			<div class="rellenocar"></div>
 			<div class="redes">
 				<a href="https://www.facebook.com/@carteras.bach/" aria-label="Facebook">
@@ -159,5 +176,6 @@
     </footer>
 	
 	<script src="script.js" defer></script>
+    <script src="jslb/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>
