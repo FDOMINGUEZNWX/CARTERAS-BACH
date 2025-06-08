@@ -137,11 +137,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function actualizarCarrito() { /*Acá es donde ocurre la actualización */
         contadorCarrito.textContent = carrito.length;
-        listaCarrito.innerHTML = "";
 
         carrito.forEach((item) => {
             const li = document.createElement("li");
-            li.textContent = `${item.nombre} - ${item.precio}`;
             listaCarrito.appendChild(li);
         });
     }
