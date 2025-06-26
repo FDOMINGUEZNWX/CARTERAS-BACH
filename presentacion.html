@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet">
+    <title>Carteras Bach</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="csslb/lightbox.min.css">
+</head>
+
+<div class="carrito-flotante">
+    <i class="fa fa-shopping-cart"></i>
+    <span id="contador-carrito">0</span>
+</div>
+
+<a href="https://www.whatsapp.com" class="whatsapp-boton" title="Chat de WhatsApp">
+	<i class="fa fa-whatsapp"></i>
+</a>	
+	
+<body>
+    <header>
+        <div class="header-contenedor">
+            <div class="logo">
+                <a href="index.html">
+					<picture class="logo">
+						<source media="(max-width: 600px)" srcset="images/logo-blanco.png">
+						<img src="images/logo-scape-blanco.png" alt="Carteras Bach" />
+					</picture>
+				</a>
+            </div>
+
+            <!-- Ícono del menú (visible en menos de 600px) -->
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <!-- Menú de navegación -->
+            <nav class="navegacion" id="navegacion">
+                <a href="carteras.html">Colección</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Presentación de la página Carteras Bach</h1>
+            <p>Federico Ariel Dominguez - 0126219 | Prof. Wenceslao Závala | Producción Digital 1 | 2025 - 1er cuatrimestre</p>
+        </div>
+
+		<div class="banner-overlay"></div>
+
+		<picture class="banner-img">
+			<img src="images/banner-presentacion.png">
+		</picture>
+    </section>
+
+
+	
+    <section class="productos">
+		<div class="rellenocar"></div>
+        <h2>¿De qué trata Carteras Bach?</h2>
+            <main class="nosotros-pagina">
+                <section class="nosotros-layout">
+                    <div class="nosotros-imagen">
+                    <img src="images/present1.png" alt="Cartera Bach">
+                    </div>
+
+                    <div class="nosotros-texto">
+                        <div class="bloque">
+                            <h2>Diseñadora de diseños exclusivos</h2>
+                            <p>Fundada por Patricia Bach, su misión era ofrecer al público carteras con diseños exclusivos, es decir, diseños irrepetibles e únicos, cuyo principal distintivo atractivo es llamar la atención con sus diseños.</p>
+                        </div>
+
+                        <div class="bloque">
+                            <h2>Misión de la página</h2>
+                            <p>Ofrecer un hub para observar las carteras a modo de una tienda digital, donde se puede consultar los precios y otros apartados.</p>
+                        </div>
+                    </div>
+                </section>
+        </section>
+
+        <section class="productos">
+		<div class="rellenocar"></div>
+		<h2>Contenido de la página</h2>
+        <div class="productos-grilla">
+            <div class="producto">
+                <a href="images/presentbox1-big.png" data-lightbox="galeria-carteras" title="index.html">
+                    <img src="images/presentbox1-min.png" alt="Landing Page" style="width: 100%;">
+                </a>
+                <div class="info">
+                    <h3>Landing Page</h3>
+                    <p><strong>index.html</strong> | Página donde aparecen destacados y ubicación.</p>
+                </div>
+            </div>
+            <div class="producto">
+                <a href="images/presentbox2-big.png" data-lightbox="galeria-carteras" title="carteras.html">
+                    <img src="images/presentbox2-min.png" alt="Carteras" style="width: 100%;">
+                </a>
+                <div class="info">
+                    <h3>Colección</h3>
+                    <p><strong>carteras.html</strong> | Página donde aparecen todas las carteras disponibles en la semana.</p>
+                </div>
+            </div>
+            <div class="producto">
+                <a href="images/presentbox3-big.png" data-lightbox="galeria-carteras" title="nosotros.html">
+                    <img src="images/presentbox3-min.png" alt="Nosotros" style="width: 100%;">
+                </a>
+                <div class="info">
+                    <h3>Nosotros</h3>
+                    <p><strong>nosotros.html</strong> | Página donde se puede observar la historia de Carteras Bach, y un resúmen de lo que es.</p>
+                </div>
+            </div>
+            <div class="producto">
+                <a href="images/presentbox4-big.png" data-lightbox="galeria-carteras" title="contacto.html">
+                    <img src="images/presentbox4-min.png" alt="contacto.html" style="width: 100%;">
+                </a>
+                <div class="info">
+                    <h3>Contacto</h3>
+                    <p><strong>contacto.html</strong> | Página donde se almacena el formulario.</p>
+                </div>
+            </div>
+    	</div>
+        <section class="rellenocar"></section><section class="rellenocar"></section><section class="rellenocar"></section>
+    </section>
+    
+    <section class="banner">
+		<div class="slider-container">
+			<div class="slider">
+				<div class="slide">
+					<picture>
+						<img src="images/banner-wir1.png" alt="banner1">
+					</picture>
+				</div>
+				<div class="slide">
+					<picture>
+						<img src="images/banner-wir2.png" alt="banner2">
+					</picture>
+				</div>
+                <div class="slide">
+					<picture>
+						<img src="images/banner-wir3.png" alt="banner2">
+					</picture>
+				</div>
+                <div class="slide">
+					<picture>
+						<img src="images/banner-wir4.png" alt="banner2">
+					</picture>
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner-overlay"></div>
+        
+		<div class="banner-content">
+            <h1>Wireframes, anuncios y mails</h1>
+            <p>Breve repaso de los wireframes iniciales, la página de anuncio, y el mail.</p>
+            <a href="anuncio.html">Ver anuncio</a>
+            <a href="mail.html">Ver .html para mail</a>
+        </div>
+    </section>
+
+    <main class="nosotros-pagina">
+		<section class="timeline-v2">
+			<h2>Presupuesto</h2>
+			<div class="timeline-v2-container">
+				<div class="evento">
+					<div class="año">105.000$</div>
+						<div class="contenido">
+							<h3>Arquitectura del Sitio</h3>
+							<p>Investigación y Planificación: <strong>35.000$</strong> | Mapeo del sitio y Wireframe: <strong>50.000$</strong> | Redacción de contenido: <strong>20.000$</strong> </p>
+						</div>
+				</div>
+				<div class="evento">
+					<div class="año">155.000$</div>
+						<div class="contenido">
+							<h3>Diseño visual</h3>
+							<p>Identidad visual: <strong>45.000$</strong> | Prototipado: <strong>80.000$</strong> | Diseño responsivo: <strong>30.000$</strong></p>
+						</div>
+				</div>
+				<div class="evento">
+					<div class="año">125.000$</div>
+						<div class="contenido">
+							<h3>Desarrollo web</h3>
+							<p>Maquetación en HTML: <strong>55.000$</strong> | Integración de JS: <strong>40.000$</strong> | Optimización de código: <strong>30.000$</strong></p>
+						</div>
+				</div>
+				<div class="evento">
+					<div class="año">97.280$</div>
+						<div class="contenido">
+							<h3>Hosting</h3>
+							<p>Dominio anual: <strong>26.000$</strong> | Hosting anual: <strong>71.280$</strong></p>
+						</div>
+				</div>
+			</div>
+			<div class="relleno"></div>
+            <h2>385.000$ + 97.280$ anuales</h2>
+		</section>
+	</main>
+
+	<section class="newsletter">
+		<h2>¡Muchas gracias por su atención!</h2>
+	</section>
+
+    <footer class="footer">
+		<div class="footer-contenido">
+			<p>© Carteras Bach · Tres de Febrero</p>
+			<div class="rellenocar"></div>
+			<div class="redes">
+				<a href="https://www.facebook.com/@carteras.bach/" aria-label="Facebook">
+				<i class="fa fa-facebook-f"></i>
+				</a>
+				<a href="https://www.instagram.com/carterasbach/" aria-label="Instagram">
+				<i class="fa fa-instagram"></i>
+				</a>
+			</div>
+		</div>
+    </footer>
+
+	<script src="script.js" defer></script>
+    <script src="jslb/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>

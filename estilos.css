@@ -372,6 +372,7 @@ header.scrolled {
     margin-bottom: 30px;
     font-size: 32px;
 }
+
 .timer-contenedor {
 	display: flex;
 	justify-content: center;
@@ -753,10 +754,39 @@ header.scrolled {
 	margin-bottom: 10px;
 }
 
+.newsletter a {
+	font-family: 'Bebas Neue', sans-serif;
+	font-weight: bold;
+	font-size: 34px;
+	margin-bottom: 10px;
+	color: white;
+	text-decoration: none;
+	position: relative; /*Necesario para usar ::after*/
+	transition: color 0.3s ease;
+}
+
+.newsletter a::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -4px; /*ligeramente debajo del texto*/
+	transform: translateX(-50%) scaleX(0);
+	transform-origin: center;
+	width: 100%;
+	height: 2px;
+	background-color: white;
+	transition: transform 0.3s ease;
+}
+
+.newsletter a:hover::after {
+	transform: translateX(-50%) scaleX(1);
+}
+
 .newsletter p {
 	font-size: 16px;
 	margin-bottom: 20px;
 }
+
 
 .newsletter-formulario {
 	max-width: 400px;
